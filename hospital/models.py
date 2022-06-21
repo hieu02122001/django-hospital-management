@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
-
 departments=[('Cardiologist','Cardiologist'),
 ('Dermatologists','Dermatologists'),
 ('Emergency Medicine Specialists','Emergency Medicine Specialists'),
@@ -26,8 +24,6 @@ class Doctor(models.Model):
     def __str__(self):
         return "{} ({})".format(self.user.first_name,self.department)
 
-
-
 class Patient(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     profile_pic= models.ImageField(upload_to='profile_pic/PatientProfilePic/',null=True,blank=True)
@@ -46,7 +42,6 @@ class Patient(models.Model):
     def __str__(self):
         return self.user.first_name+" ("+self.symptoms+")"
 
-
 class Appointment(models.Model):
     patientId=models.PositiveIntegerField(null=True)
     doctorId=models.PositiveIntegerField(null=True)
@@ -55,8 +50,6 @@ class Appointment(models.Model):
     appointmentDate=models.DateField(auto_now=True)
     description=models.TextField(max_length=500)
     status=models.BooleanField(default=False)
-
-
 
 class PatientDischargeDetails(models.Model):
     patientId=models.PositiveIntegerField(null=True)
@@ -75,8 +68,3 @@ class PatientDischargeDetails(models.Model):
     doctorFee=models.PositiveIntegerField(null=False)
     OtherCharge=models.PositiveIntegerField(null=False)
     total=models.PositiveIntegerField(null=False)
-
-
-#Developed By : sumit kumar
-#facebook : fb.com/sumit.luv
-#Youtube :youtube.com/lazycoders
