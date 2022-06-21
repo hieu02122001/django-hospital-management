@@ -10,7 +10,6 @@ urlpatterns = [
     path('',views.home_view,name=''),
 
     path('aboutus', views.aboutus_view),
-    path('contactus', views.contactus_view),
 
     path('adminclick', views.adminclick_view),
     path('doctorclick', views.doctorclick_view),
@@ -49,7 +48,6 @@ urlpatterns = [
     path('reject-patient/<int:pk>', views.reject_patient_view,name='reject-patient'),
     path('admin-discharge-patient', views.admin_discharge_patient_view,name='admin-discharge-patient'),
     path('discharge-patient/<int:pk>', views.discharge_patient_view,name='discharge-patient'),
-    path('download-pdf/<int:pk>', views.download_pdf_view,name='download-pdf'),
 
     path('admin-appointment', views.admin_appointment_view,name='admin-appointment'),
     path('admin-view-appointment', views.admin_view_appointment_view,name='admin-view-appointment'),
