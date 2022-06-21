@@ -234,12 +234,6 @@ def reject_doctor_view(request,pk):
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
-def admin_view_doctor_specialisation_view(request):
-    doctors=models.Doctor.objects.all().filter(status=True)
-    return render(request,'hospital/admin_view_doctor_specialisation.html',{'doctors':doctors})
-
-@login_required(login_url='adminlogin')
-@user_passes_test(is_admin)
 def admin_patient_view(request):
     return render(request,'hospital/admin_patient.html')
 
@@ -668,9 +662,4 @@ def patient_discharge_view(request):
             'patientId':request.user.id,
         }
     return render(request,'hospital/patient_discharge.html',context=patientDict)
-
-## ABOUT US AND CONTACT US VIEWS
-
-def aboutus_view(request):
-    return render(request,'hospital/aboutus.html')
 
